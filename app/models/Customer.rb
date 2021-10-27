@@ -12,7 +12,7 @@ class Customer <ActiveRecord::Base
         "I spent #{money} Dollars on food"
     end
  #   most ordered food by a customer instance
-    def popular
+    def goat
       fav = self.food_options.each_with_object(Hash.new(0)) { |food_option, hash| hash[food_option['food_name']] += 1 }.max_by { |k, v| v } 
       "#{self.name} ordered #{fav}"
     end
